@@ -1,0 +1,13 @@
+{
+    "elements": {
+        "form": {}
+    },
+    "attributes": {
+        "cellspace": {
+            "context": "table"
+        },
+        "heigth": {
+            "context": "tr"
+        }
+    }
+}

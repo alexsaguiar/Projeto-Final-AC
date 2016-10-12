@@ -1,0 +1,1 @@
+﻿alter table cidade add column cidadeNatal varchar(100)
