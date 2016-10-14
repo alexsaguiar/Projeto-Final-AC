@@ -1,0 +1,77 @@
+
+
+
+
+
+alter table historicos add column observacao varchar(500)
+
+alter table eletricistas add column codigo_historico integer 
+
+
+alter table avicultores add column codigo_historico integer
+
+
+alter table eletricistas add constraint pk_historicos foreign key (codigo_historico) references historicos(codigo_historico)
+
+
+alter table avicultores add constraint pk_historicos foreign key (codigo_historico) references historicos(codigo_historico)
+
+
+
+create table eletricistas (codigo_eletricista integer primary key, nome_eletricista varchar(80))
+
+
+
+create table avicultores (codigo_avicultor integer primary key, nome_avicultor varchar(80))
+
+
+
+
+
+------errado
+alter table eletricistas add column codigo_historico integer
+alter table eletricistas
+ drop column codigo_historico
+
+alter table avicultores add column codigo_historico integer
+alter table avicultores 
+drop column codigo_historico
+ 
+----------
+
+alter table historicos add column codigo_eletricista integer
+
+
+alter table historicos add column codigo_avicultor integer
+
+
+
+alter table historicos add constraint pk_eletricistas foreign key (codigo_eletricista) references eletricistas(codigo_eletricista)
+
+
+alter table historicos add constraint pk_avicultores foreign key (codigo_avicultor) references avicultores (codigo_avicultor)
+
+----feito para criar a sequencia de numeros para o codigo do cliente
+
+
+create unique index sequencia_codigo on clientes (codigo_cliente)
+
+create table clientes (codigo_cliente  serial not null primary key,
+
+			nome_cliente varchar(100),
+
+			email varchar(100),
+
+			telefone varchar(15),
+
+			celular varchar(15),
+	
+			senha varchar(10),
+
+			observacao varchar(500),
+
+			nome_cidade varchar(100),
+
+			estado varchar(100))
+
+
