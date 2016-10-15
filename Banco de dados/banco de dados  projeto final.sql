@@ -15,3 +15,5 @@ create table historicos (codigo_historico integer primary key, pendente varchar(
 alter table clientes add column codigo_historico integer
 
 alter table clientes add constraint pk_historicos foreign key (codigo_historico) references historicos(codigo_historico)
+
+alter table clientes add column cliente varchar(50);

@@ -75,3 +75,24 @@ create table clientes (codigo_cliente  serial not null primary key,
 			estado varchar(100))
 
 
+
+
+
+create table cidades (codigo_cidade integer primary key, 
+			nome_cidade varchar(50),
+			cidade varchar(50),
+			estado varhcar(50))
+
+
+alter table clientes add column codigo_cidade integer
+
+alter table clientes add constraint pk_cidades foreign key(codigo_cidade) references cidades (codigo_cidade)
+
+
+
+
+alter table cidades drop column cidade
+			
+
+
+alter table clientes add column login_usuario varchar(15)
